@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title> Pizza order </title>
+		<link rel="stylesheet" type="text/css" href="style.css">
+		<script type="text/javascript" src="main.js"></script>
+	</head>
+	<body>
+		<div class="container">
+			<h1> Створи піцу сам </h1>
+			<h3> Інформація про користувача </h3>
+			<form name="user_info" class="user_info">
+				<label> Ім'я: </label>
+				<input placeholder="Прізвище Ім'я" type="text" name="userName" id="userName">
+				<label> Телефон: </label>
+				<input placeholder="(000) 000-00-00" type="text" name="phone" id="phone">
+				<label> Місто: </label>
+				<input placeholder="Почніть вводити місто" list="city" name="city" id="city_value">
+				<datalist id="city">
+					<option> Вінниця‎ </option>
+					<option> Житомир‎ </option>
+					<option> Запоріжжя‎ </option>
+					<option> Київ‎ </option>
+					<option> Луцьк‎ </option>
+					<option> Львів‎ </option>
+					<option> Миколаїв‎ </option>
+					<option> Одеса‎ </option>
+					<option> Полтава‎ </option>
+					<option> Рівне‎ </option>
+					<option> Суми‎ </option>
+					<option> Тернопіль‎ </option>
+					<option> Ужгород‎ </option>
+					<option> Харків‎ </option>
+				    <option> Херсон‎ </option>
+					<option> Хмельницький‎ </option>
+					<option> Черкаси‎ </option>
+					<option> Чернівці‎ </option>
+					<option> Чернігів‎ </option>
+				</datalist>
+				<label> Вулиця: </label>
+				<input placeholder="Вулиця" type="text" name="street"  id="street">
+				<br/>
+				<label> Буд / Кв: </label>
+				<input placeholder="111" type="text" name="flat" id="flat" style="width: 90px;">
+				<input placeholder="111а" type="text" name="house" id="house" style="width: 90px; margin-right: 6px;">
+			</form>
+			<div class="user_info_tooltips">
+				<div id="userName_rule">Поле може приймати лише букви</div>
+				<div id="phone_rule">Телефон має бути у форматі (000) 000-00-00</div>
+				<div id="city_rule">Місто можна обрати лише зі списку</div>
+				<div id="street_rule">Поле може приймати лише букви</div>
+				<div id="flat_rule">Поле може приймати не більше 3 цифр</div>
+				<div id="house_rule" style="position: absolute; top: 112px;">Поле може приймати не більше 3 цифр і 1 букву</div>
+			</div>
+			<h3> Інформація про піцу </h3>
+			<form name="pizza_info" class="pizza_info">
+				<label> Розмір піци: </label>
+				<br/>
+				<input type="radio" name="size" value="50+Маленька"> маленька 
+				<br/>
+				<input type="radio" name="size" value="70+Середня"> середня  
+				<br/>
+				<input type="radio" name="size" value="90+Велика"> велика
+				<br/> <br/>
+				<label> Начинки: </label>
+				<br/>
+				<input type="checkbox" class="toping" name="bekon" value="Images/bekon.png+25+бекон"> бекон 
+				<br/>
+				<input type="checkbox" class="toping" name="mushrooms" value="Images/mushrooms.png+20+гриби"> гриби
+				<br/>
+				<input type="checkbox" class="toping" name="sausages" value="Images/sausages.png+30+ковбаски"> ковбаски 
+				<br/>
+				<input type="checkbox" class="toping" name="olives" value="Images/olives.png+20+оливки"> оливки 
+				<br/>
+				<input type="checkbox" class="toping" name="spices" value="Images/spices.png+10+спеції"> спеції 
+				<br/>
+				<input type="checkbox" class="toping" name="cheese" value="Images/cheese.png+25+сир"> сир 
+			</form>
+			<div id="pizza" class="pizza">
+				<img src="Images/bekon.png">
+				<img src="Images/cheese.png">
+				<img src="Images/mushrooms.png">
+				<img src="Images/olives.png">
+				<img src="Images/sausages.png">
+				<img src="Images/spices.png">
+			</div>
+			<div class="price_block">
+				<span class="title"> Price: </span>
+				<div id="price" class="price"> 0 </div>
+				<span class="currency"> грн. </span>
+			</div>
+			<input type="button" name="ok" id="ok" class="ok" value="OK">
+
+			<div id="summary" class="summary">
+				<div class="summary_alert">
+					<h3>Дякуюємо за ваше замовлення!</h3>
+					<div id="name_order"></div>
+					<div id="phone_order"></div>
+					<div id="street_order"></div>
+					<div id="size_order"></div>
+					<div id="toping_order"></div>
+					<div id="price_order"> </div>
+					<input id="previous" type="button" name="previous" value="Назад">
+					<input id="confirm" type="button" name="confirm" value="Підтвердити">
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
